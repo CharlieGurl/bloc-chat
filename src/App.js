@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 //import { Route, Link } from 'react-router-dom'; 
 import './App.css';
-import * as firebase from 'firebase';
-import RoomList from './components/RoomList';
+import * as firebase from "firebase";
+import 'firebase/database'; 
+import RoomList from './components/Rooms/RoomList';
+import MessageList from './components/Messages/MessageList';
 
 
-//<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
-//<script>
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCPMhXbW1vUf0rGt4PKDcZhxyIYmYY3Egs",
@@ -19,22 +19,36 @@ import RoomList from './components/RoomList';
   firebase.initializeApp(config);
 
 
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+      this.activeRoom = this.activeRoom.bind(this);
+    
+      this.state = {
+      activeRoom: '',
+      roomMessages: ''
+    };
+  }
+  
+
+  activeRoom(room) {
+    this.setState({activeRoom: room.key}); 
+    console.log(this.state.activeRoom);
+  }
+
+  
+
+
   render() {
     return (
-      <div className="App">
-        <header>
-          <h1>Bloc Chat</h1>
-        </header>
-        <h2 className="RoomList">
-          Chat Rooms:
-        </h2>
-
-        <RoomList 
-          firebase = {firebase}
-          /> 
-    
+      <div className="roomsWrapper">
+        <div className="roomsHeader">
+          <div className="heading">Bloc Chat</div>
+        </div>
+        <div className="roomBody">
+           <RoomList firebase = {firebase} action = {this.activeRoom} />
+           <MessageList firebase = {firebase} value = {this.state.activeRoom.key} /> 
+        </div>
       </div>
     );
   }
