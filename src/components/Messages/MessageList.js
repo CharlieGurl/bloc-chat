@@ -22,6 +22,7 @@ class MessageList extends Component {
         });
     }
 
+
     handleSubmit(newMessage) {
         this.messagesRef.push({
             username: this.props.user,
@@ -55,7 +56,10 @@ class MessageList extends Component {
            
            <section className="submitMessage">
               <form onSubmit={ (e) => this.handleSubmit(e) }>
-               <input type="text" placeholder="Create New Message" value= { this.state.newMessage } onChange={ (e) => this.handleChange (e) } />
+               <input type="text" 
+                placeholder="Create New Message" value= { this.state.newMessage } onChange={ (e) => this.handleChange (e) } 
+                style={{height:40, width: '20%'}}
+                />
                <input type="submit" />
              </form>
             </section>
