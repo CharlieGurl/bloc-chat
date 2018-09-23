@@ -36,7 +36,7 @@ class MessageList extends Component {
     }
    
 
-
+    
     render() { 
         return (
             <div className="messagesWrapper">
@@ -56,6 +56,8 @@ class MessageList extends Component {
             </div>
         )
     }
+
+   
     
 }
 

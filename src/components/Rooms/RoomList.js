@@ -41,21 +41,21 @@ class RoomList extends Component {
 
 
     render(){
-        return (
-          <div className="roomsWrapper"> 
-          <div className='room-list'>
-            {
-              this.state.rooms.map((room, index) =>
-              <Room key={index} room={room} />)}
-          </div>
-          <section className="form">
-              <form onSubmit={ (e) => { e.preventDefault(); this.handleSubmit(this.state.newRoom) } }>
-                <input type="text" placeholder="Create New Room" value= { this.state.newRoom } onChange={ (e) => this.handleChange (e) } />
-                <input type="submit" />
-              </form>
-            </section>
-          </div>
-          
+      return (
+        <div className="roomsWrapper"> 
+        <div className='room-list'>
+          {
+            this.state.rooms.map((room, index) =>
+            <Room key={index} room={room} />)}
+        </div>
+        <section className="form">
+            <form onSubmit={ (e) => { e.preventDefault(); this.handleSubmit(this.state.newRoom) } }>
+              <input type="text" placeholder="Create New Room" value= { this.state.newRoom } onChange={ (e) => this.handleChange (e) } />
+              <input type="submit" />
+            </form>
+          </section>
+        </div>
+        
         )
       }
   }
