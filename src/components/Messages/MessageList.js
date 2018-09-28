@@ -43,9 +43,9 @@ class MessageList extends Component {
         return (
             <section className="messagesWrapper">
               <section className="messages">
-                {this.state.messages.map( (message) =>
+                {this.state.messages.map( (message, index) =>
                 this.props.activeRoom.key === message.roomId && (
-                <div className="message-text"> 
+                <div className="message-text" key={index}> 
                 <div key={message.key}>
                   <div>Chat Room: {this.props.activeRoom.name}</div> 
                   <div>Message: {message.content}</div>

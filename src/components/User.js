@@ -25,8 +25,8 @@ class User extends Component {
     render() {
         return (
             <section className="User-Auth">
-              <button classname="sign-in" value="sign-in" onClick={() => this.handleSignIn() }>Sign In</button>
-              <button classname="sign-out" value="sign-out" onClick={() => this.handleSignOut() }>Sign Out</button>
+              <button className="sign-in" value="sign-in" onClick={() => this.handleSignIn() }>Sign In</button>
+              <button className="sign-out" value="sign-out" onClick={() => this.handleSignOut() }>Sign Out</button>
               <div>Current user: {this.props.user ? this.props.user.displayName: "Guest"} </div> 
             </section> 
         )
