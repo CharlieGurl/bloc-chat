@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 //import { Route, Link } from 'react-router-dom'; 
-import './App.css';
 import * as firebase from "firebase";
 import 'firebase/database'; 
-import RoomList from './components/Rooms/RoomList';
-import MessageList from './components/Messages/MessageList';
-import User from './components/User'; 
+import RoomList from './components/RoomList';
+import MessageList from './components/MessageList';
+import User from './components/User';
+import './components/styles.css';
+
 
 
  // Initialize Firebase
@@ -40,13 +41,9 @@ class App extends Component {
 
   setUser(user) {
     if(user) {
-      this.setState({
-        user: user
-      });
+      this.setState({ user: user });
     } else {
-      this.setState ({
-        user: null
-      });
+      this.setState ({ user: null });
     }
   }
 

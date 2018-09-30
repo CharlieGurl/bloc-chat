@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './RoomList.css'; 
+import './styles.css'; 
 
 class RoomList extends Component {
     constructor (props) {
@@ -57,7 +57,7 @@ class RoomList extends Component {
             </section>
           </div>
           
-        )
+        );
       }
   }
   //const Room = (props) => <h4>{props.room.name}</h4>

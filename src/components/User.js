@@ -1,8 +1,11 @@
 import React, { Component } from 'react'; 
 
+
 class User extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
+        this.handleSignIn = this.handleSignIn.bind(this);
+        this.handleSignOut = this.handleSignOut.bind(this);
     }
 
 
@@ -25,9 +28,9 @@ class User extends Component {
     render() {
         return (
             <section className="User-Auth">
-              <button className="sign-in" value="sign-in" onClick={() => this.handleSignIn() }>Sign In</button>
-              <button className="sign-out" value="sign-out" onClick={() => this.handleSignOut() }>Sign Out</button>
-              <div>Current user: {this.props.user ? this.props.user.displayName: "Guest"} </div> 
+              <button id="signInButton" onClick={this.handleSignIn}>Sign In</button>
+              <button id ="signOutButton" onClick={this.handleSignOut}>Sign Out</button>
+              <p>Current user: {this.props.user ? this.props.user.displayName: "Guest"} </p> 
             </section> 
         )
     }
