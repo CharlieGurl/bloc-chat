@@ -47,18 +47,19 @@ class MessageList extends Component {
     render() { 
         return (
             <section className="messagesWrapper">
-              <p>Chat Room: {this.props.activeRoom.name}</p> 
-                <section className='messages'>
-                 {this.state.messages.map( (message, index) => this.props.activeRoom.key === message.roomId && (
-                  <div className="message-text" key={index}>
-                  <div key={message.key}>
-                    <div>Message: {message.content}</div>
-                    <div>User: {message.username} </div>
-                  </div>
+            <p>Chat Room: {this.props.activeRoom.name}</p> 
+              <section className='messages'>
+               {this.state.messages.map( (message, index) => this.props.activeRoom.key === message.roomId && (
+                <div className="message-text" key={index}>
+                <div key={message.key}>
+                  <div>Message: {message.content}</div>
+                  <div>User: {message.username} </div>
+                </div>
 
-                  </div>
-                  ))}
-                </section>
+                </div>
+
+                ))}
+              </section>
 
                <section className="submitMessage">
                 <form onSubmit={ (e) => this.handleSubmit(e) }>
@@ -75,3 +76,5 @@ class MessageList extends Component {
 }
 
 export default MessageList; 
+
+
