@@ -59,9 +59,11 @@ class MessageList extends Component {
                {this.state.messages.map( (message, index) => this.props.activeRoom.key === message.roomId && (
                 <div className="message-text" key={index}>
                 <div key={message.key}>
+
                   <div>Message: {message.content}</div>
                   <div>User: {message.username} </div>
                 </div>
+
 
                 </div>
 
