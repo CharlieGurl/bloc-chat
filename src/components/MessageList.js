@@ -8,7 +8,12 @@ class MessageList extends Component {
 
         this.state = {
             messages: [],
-            newMessage: ""
+            message: {
+                username: '',
+                content: '',
+                roomId: '',
+            },
+            newMessage: ''
         };
 
         this.messagesRef = this.props.firebase.database().ref('messages');
@@ -32,9 +37,11 @@ class MessageList extends Component {
             content: this.state.newMessage,
             roomId: this.props.activeRoom.key,
             sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
-            
+           
+
         }); 
-        this.setState ({newMessage: ""}); 
+        this.setState ({newMessage: ''}); 
+        newMessage.preventDefault();
     }
 
     //assign new text in message input
